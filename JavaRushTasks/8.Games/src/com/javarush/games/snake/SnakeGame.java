@@ -9,7 +9,7 @@ public class SnakeGame extends Game {
     private  Apple apple;
     private  int turnDelay;
     private  boolean isGameStopped;
-    private static final int GOAL=28;
+    private static final int GOAL=100;
     private  int score;
     @Override
     public void initialize() {

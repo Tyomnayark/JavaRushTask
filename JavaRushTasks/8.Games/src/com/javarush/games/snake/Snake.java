@@ -64,26 +64,22 @@ public class Snake extends GameObject{
                 apple.isAlive = false;
                 snakeParts.add(0, newHead);
             } else {
-                if (newHead.x >= SnakeGame.WIDTH
-                        || newHead.y >= SnakeGame.HEIGHT
-                        || newHead.x < 0
-                        || newHead.y < 0
-                ) {
-                    isAlive = false;
-                } else {
                     removeTail();
                     snakeParts.add(0, newHead);
-                }
             }
         }
     }
     public GameObject createNewHead(){
         GameObject head = snakeParts.get(0);
-        switch (direction){
-            case UP:  return new GameObject(head.x,head.y-1);
-            case DOWN: return new GameObject(head.x,head.y+1);
-            case LEFT: return new GameObject(head.x-1, head.y);
-            case RIGHT: return new GameObject(head.x+1,head.y);
+        switch (direction) {
+            case UP:
+                return new GameObject((head.x + SnakeGame.WIDTH) % SnakeGame.WIDTH, (head.y + SnakeGame.HEIGHT - 1) % SnakeGame.HEIGHT);
+            case DOWN:
+                return new GameObject((head.x + SnakeGame.WIDTH) % SnakeGame.WIDTH, (head.y + 1) % SnakeGame.HEIGHT);
+            case LEFT:
+                return new GameObject((head.x + SnakeGame.WIDTH - 1) % SnakeGame.WIDTH, (head.y + SnakeGame.HEIGHT) % SnakeGame.HEIGHT);
+            case RIGHT:
+                return new GameObject((head.x + 1) % SnakeGame.WIDTH, (head.y + SnakeGame.HEIGHT) % SnakeGame.HEIGHT);
         }
         return head;
     }
