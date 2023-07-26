@@ -1,0 +1,7 @@
+
+´
+java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(ãÍ•ñýÿÿÿÿ
+A
+java:S3599",Use another way to initialize this instance.(ÌÆ²+
+n
+java:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(ÌÆ²+
